@@ -35,7 +35,10 @@ const cart = [
 
 //CODE HERE
 
-// const summedPrice = cart.reduce(/* CALLBACK HERE */)
+const summedPrice = cart.reduce((acc, curr) => {
+    return acc + curr.price
+}, 0)
+// console.log(summedPrice);
 
 
 //////////////////PROBLEM 2////////////////////
@@ -54,8 +57,10 @@ const cart = [
 */
 
 //CODE HERE
-
-
+const calcFinalPrice = (cartTotal, couponValue, tax) => {
+    return ((1 + tax) * cartTotal) - couponValue
+}
+// console.log(calcFinalPrice(27.50, 2.00, 0.06));
 
 //////////////////PROBLEM 3////////////////////
 /*  
@@ -78,7 +83,7 @@ const cart = [
 */
 
 /*
-    TEXT ANSWER HERE
+    For my customer object, I'm going to have properties: name, email, phone number, address, credit card number. I picked these because they're necessary for online orders / delivery orders. Name to be able to identify orders, email for confirmation of order, phone number in case there's any issues with their order, address if the restaurant does delivery, and credit card number to charge for the order. Name, email, and address will all be strings because they're just strings by nature, they're all letters. Phone number and credit card info will be numbers because they're numbers by nature.
 
 */
 
@@ -88,3 +93,10 @@ const cart = [
 */
 
 //CODE HERE
+const customer = {
+    name: "John Doe",
+    email: "johndoe@gmail.com",
+    phoneNumber: 123456789,
+    address: "12345 John Doe's Street, Salt Lake City, UT",
+    creditCardNumber: 123456789
+};
