@@ -22,7 +22,8 @@
 */
 
 //CODE HERE
-
+const greetUser = (username) => console.log(`Welcome back, ${username}`);
+// greetUser("Dallas");
 
 
 
@@ -50,7 +51,13 @@
 const deliveryAreaZipCodes = [85205, 85204, 85203, 85213, 85206]
 
 //CODE HERE
-
+const canWeDeliver = (zipCode) => {
+    if (deliveryAreaZipCodes.includes(zipCode)) {
+        console.log("You're in our delivery zone!");
+    } else {
+        console.log("Sorry, we can't deliver to that address");
+    }
+}
 
 
 /* 
@@ -71,7 +78,16 @@ const deliveryAreaZipCodes = [85205, 85204, 85203, 85213, 85206]
 */
 
 // CODE HERE
-
+const canWeDeliverTwo = (zipCode) => {
+    for (let i = 0; i < deliveryAreaZipCodes.length; i++) {
+        if (deliveryAreaZipCodes[i] === zipCode) {
+            return "You're in our delivery zone!";
+        } else {
+            return "Sorry, we can't deliver to that address";
+        }
+    }
+}
+// console.log(canWeDeliverTwo(8520));
 
 //////////////////PROBLEM 3////////////////////
 /* 
@@ -107,7 +123,8 @@ const deals = [
 */
 
 //CODE HERE
-
+deals[0].title = deals[0]["title"].replace("15", "10");
+// console.log(deals);
 
 
 /*
@@ -124,3 +141,6 @@ const deals = [
 */
 
 //CODE HERE
+// I'm assuming the instructions meant no whitespace at the beginning and end of the string, and not the spaces between the words
+deals[1].desc = deals[1]["desc"].replace("April", "March").trim();
+// console.log(deals);
